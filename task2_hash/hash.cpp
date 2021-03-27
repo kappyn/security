@@ -39,7 +39,6 @@ bool scan_zeros( const unsigned char * hash, unsigned hashLn, unsigned requiredZ
 }
 
 void print_instance( const char * text, const unsigned char * hash, unsigned hashLn ) {
-	cout << text << '\n';
 	stringstream ss;
 	ss << hex << setfill( '0' );
 	for ( size_t i = 0 ; strlen( text ) > i ; ++i )
@@ -52,7 +51,6 @@ void print_instance( const char * text, const unsigned char * hash, unsigned has
 
 int main( int argc, char * argv[] ) {
 #define TEXT_LEN 15
-
 	// arg check
 	if ( argc != 2 ) {
 		fprintf( stderr, "Usage: %s [zero_bits]\n", argv[ 0 ] );
