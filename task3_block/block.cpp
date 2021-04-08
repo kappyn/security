@@ -106,9 +106,7 @@ public:
 	}
 
 	static string CreateFileName( char mode, const string & cipher, const string & name ) {
-		string filename = name.substr( 0, name.find( '_' ) ).substr( 0, name.find( '.' ) );
-		string extension = name.substr( name.find( '.' ) );
-		return string( filename + "_" + cipher + "_" + mode + extension );
+		return name.substr( 0, name.find( '.' ) ) + '_' + cipher + '_' + mode + name.substr( name.find_last_of( '.' ) );
 	}
 
 	// header manipulation methods
@@ -278,14 +276,14 @@ public:
 
 int main( int argc, char * argv[] ) {
 	if ( argc != 4 ) {
-		fprintf( stderr, "Usage: %s [ACTION] [MODE] [FILENAME]\n", argv[ 0 ] );
+		fprintf( stderr, "Pouziti: %s [ACTION] [MODE] [FILENAME]\n", argv[ 0 ] );
 		return 1;
 	}
 	if (
 			( ( argv[ 1 ][ 0 ] != 'e' ) && ( argv[ 1 ][ 0 ] != 'd' ) ) ||
 		 	( strcmp( argv[ 2 ], "ecb" ) != 0 && strcmp( argv[ 2 ], "cbc" ) != 0 )
 	) {
-		fprintf( stderr, "Invalid arguments.\n" );
+		fprintf( stderr, "Neplatny vstup.\n" );
 		return 2;
 	}
 
