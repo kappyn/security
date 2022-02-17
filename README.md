@@ -1,3 +1,1 @@
-# template
-
-Empty structure for lab tasks
+# BI-BEZ
